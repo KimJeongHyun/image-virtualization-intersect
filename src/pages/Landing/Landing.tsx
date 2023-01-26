@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import useGetTodos from "../../hooks/useGetTodos";
 
 import { LandingContainer, TableContainer } from "./_styled";
 
 import { TableEachRows } from "./components";
 
-const intersectSize = 10;
+const initialSize = 10;
 
 export default function Landing() {
   const { data } = useGetTodos();
@@ -18,7 +18,7 @@ export default function Landing() {
               <TableEachRows
                 data={data[idx]}
                 key={i.title}
-                isFirst={idx < intersectSize}
+                isFirst={idx < initialSize}
               />
             ))
           : ""}

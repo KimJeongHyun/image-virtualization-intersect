@@ -23,7 +23,7 @@ export default function TableEachRows({
     threshold: 0.2,
   });
   return (
-    <TableRow ref={target}>
+    <TableRow ref={!isFirst ? target : null}>
       {isIntersect ? (
         <>
           {!isView && (
